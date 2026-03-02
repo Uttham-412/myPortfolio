@@ -5,10 +5,20 @@ import profileImg from "@/assets/profile.png";
 const Hero = () => {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden px-4">
-      {/* Background orbs */}
+      {/* Animated background blobs */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full gradient-bg opacity-10 blur-[100px] animate-float" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-secondary opacity-10 blur-[120px] animate-float" style={{ animationDelay: "3s" }} />
+        <div
+          className="absolute -top-20 -left-20 w-[500px] h-[500px] bg-primary/15 blur-[80px]"
+          style={{ animation: "blob 8s ease-in-out infinite" }}
+        />
+        <div
+          className="absolute top-1/3 -right-20 w-[400px] h-[400px] bg-secondary/15 blur-[80px]"
+          style={{ animation: "blob 10s ease-in-out infinite", animationDelay: "2s" }}
+        />
+        <div
+          className="absolute -bottom-20 left-1/3 w-[450px] h-[450px] bg-accent/15 blur-[80px]"
+          style={{ animation: "blob 9s ease-in-out infinite", animationDelay: "4s" }}
+        />
       </div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
@@ -22,7 +32,7 @@ const Hero = () => {
             <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden gradient-border glow">
               <img src={profileImg} alt="John Doe" className="w-full h-full object-cover" />
             </div>
-            <div className="absolute inset-0 rounded-full gradient-bg opacity-20 blur-2xl -z-10 scale-125" />
+            <div className="absolute inset-0 rounded-full gradient-bg-multi opacity-20 blur-2xl -z-10 scale-150" />
           </div>
         </motion.div>
 
@@ -50,7 +60,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
-          className="text-lg sm:text-xl text-muted-foreground mb-3"
+          className="text-lg sm:text-xl text-muted-foreground mb-3 font-medium"
         >
           Engineering Student | AI & ML Enthusiast
         </motion.p>
@@ -73,13 +83,13 @@ const Hero = () => {
         >
           <a
             href="#projects"
-            className="gradient-bg px-8 py-3.5 rounded-lg font-medium text-primary-foreground hover:opacity-90 transition-opacity"
+            className="gradient-bg px-8 py-3.5 rounded-xl font-medium text-primary-foreground hover:opacity-90 transition-opacity shadow-lg"
           >
             View Projects
           </a>
           <a
             href="#resume"
-            className="glass px-8 py-3.5 rounded-lg font-medium text-foreground hover:bg-muted transition-colors flex items-center gap-2"
+            className="glass px-8 py-3.5 rounded-xl font-medium text-foreground hover:shadow-md transition-all flex items-center gap-2"
           >
             <FileDown className="w-4 h-4" />
             Download Resume
