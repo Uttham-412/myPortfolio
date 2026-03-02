@@ -17,7 +17,7 @@ const Index = () => {
       <Resume />
       <Contact />
       <footer className="py-8 text-center text-sm text-muted-foreground border-t border-border">
-        <p>© 2026 John Doe. Built with passion for AI.</p>
+        <p>© 2026 Uttham. Built with passion for AI.</p>
       </footer>
     </div>
   );
