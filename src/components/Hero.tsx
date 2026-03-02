@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, FileDown } from "lucide-react";
+import profileImg from "@/assets/profile.png";
 
 const Hero = () => {
   return (
@@ -11,6 +12,20 @@ const Hero = () => {
       </div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-8 flex justify-center"
+        >
+          <div className="relative">
+            <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden gradient-border glow">
+              <img src={profileImg} alt="John Doe" className="w-full h-full object-cover" />
+            </div>
+            <div className="absolute inset-0 rounded-full gradient-bg opacity-20 blur-2xl -z-10 scale-125" />
+          </div>
+        </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
