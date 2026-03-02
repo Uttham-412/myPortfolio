@@ -41,19 +41,19 @@ const Contact = () => {
             <h3 className="text-xl font-heading font-semibold">Connect with me</h3>
             <div className="space-y-4">
               {[
-                { icon: Mail, label: "johndoe@email.com", href: "mailto:johndoe@email.com" },
-                { icon: Linkedin, label: "linkedin.com/in/johndoe", href: "#" },
-                { icon: Github, label: "github.com/johndoe", href: "#" },
+                { icon: Mail, label: "johndoe@email.com", href: "mailto:johndoe@email.com", color: "from-primary to-secondary" },
+                { icon: Linkedin, label: "linkedin.com/in/johndoe", href: "#", color: "from-secondary to-accent" },
+                { icon: Github, label: "github.com/johndoe", href: "#", color: "from-accent to-primary" },
               ].map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   className="flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors group"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-muted flex items-center justify-center group-hover:gradient-bg transition-all duration-300">
-                    <item.icon className="w-4 h-4" />
+                  <div className={`w-10 h-10 rounded-xl bg-gradient-to-br ${item.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                    <item.icon className="w-4 h-4 text-primary-foreground" />
                   </div>
-                  <span className="text-sm">{item.label}</span>
+                  <span className="text-sm font-medium">{item.label}</span>
                 </a>
               ))}
             </div>
@@ -77,7 +77,7 @@ const Contact = () => {
                 required
                 value={form[field.name]}
                 onChange={(e) => setForm({ ...form, [field.name]: e.target.value })}
-                className="w-full px-5 py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                className="w-full px-5 py-3.5 rounded-xl bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all shadow-sm"
               />
             ))}
             <textarea
@@ -86,11 +86,11 @@ const Contact = () => {
               required
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
-              className="w-full px-5 py-3.5 rounded-xl bg-muted border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all resize-none"
+              className="w-full px-5 py-3.5 rounded-xl bg-card border border-border text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary/50 transition-all resize-none shadow-sm"
             />
             <button
               type="submit"
-              className="gradient-bg px-8 py-3.5 rounded-xl font-medium text-primary-foreground hover:opacity-90 transition-opacity inline-flex items-center gap-2"
+              className="gradient-bg px-8 py-3.5 rounded-xl font-medium text-primary-foreground hover:opacity-90 transition-opacity inline-flex items-center gap-2 shadow-lg"
             >
               <Send className="w-4 h-4" />
               Send Message
