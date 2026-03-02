@@ -12,21 +12,21 @@ const About = () => {
       title: "Passion",
       color: "from-primary to-secondary",
       description:
-        "Deeply fascinated by the intersection of mathematics and computing. I love building ML models that extract meaningful patterns from complex data and drive intelligent decisions.",
+        "Passionate about Artificial Intelligence, machine learning systems, and secure application development. I enjoy building real-world projects such as authentication systems, collaborative applications, and full-stack platforms that solve practical problems.",
     },
     {
       icon: GraduationCap,
       title: "Education",
       color: "from-secondary to-accent",
       description:
-        "Pursuing B.Tech in Computer Science & Engineering with specialization in AI & ML. Maintaining strong academics while actively contributing to research projects and hackathons.",
+        "Pursuing Bachelor of Engineering in Artificial Intelligence & Machine Learning at Canara Engineering College (2023-2027). Currently in 3rd year, building strong foundations in AI/ML and software development.",
     },
     {
       icon: Target,
       title: "Goals",
       color: "from-accent to-primary",
       description:
-        "Aiming to become a leading AI researcher and engineer. My focus areas include Deep Learning architectures, NLP, and building scalable data pipelines for production AI systems.",
+        "Aiming to become a highly skilled AI Engineer who designs intelligent, scalable, and secure systems that create meaningful impact. Continuously improving technical knowledge, problem-solving skills, and hands-on development experience.",
     },
   ];
 

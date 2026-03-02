@@ -1,14 +1,45 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const skills = [
-  { name: "Python", level: 90, color: "from-primary to-secondary" },
-  { name: "Machine Learning", level: 85, color: "from-secondary to-accent" },
-  { name: "Deep Learning", level: 80, color: "from-accent to-primary" },
-  { name: "SQL", level: 75, color: "from-primary via-secondary to-accent" },
-  { name: "TensorFlow / PyTorch", level: 80, color: "from-secondary to-primary" },
-  { name: "Data Analysis", level: 85, color: "from-accent to-secondary" },
-  { name: "Time Series Forecasting", level: 75, color: "from-primary to-accent" },
+const skillCategories = [
+  {
+    category: "Programming Languages",
+    skills: [
+      { name: "Python", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
+      { name: "C", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" },
+      { name: "Java", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" },
+      { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+    ],
+  },
+  {
+    category: "AI / Machine Learning",
+    skills: [
+      { name: "Machine Learning", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+      { name: "NLP", icon: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Colaboratory_SVG_Logo.svg" },
+      { name: "Scikit-learn", icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" },
+    ],
+  },
+  {
+    category: "Web Development",
+    skills: [
+      { name: "HTML", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" },
+      { name: "CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" },
+      { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+      { name: "Node.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
+      { name: "Express.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" },
+    ],
+  },
+  {
+    category: "Tools & Technologies",
+    skills: [
+      { name: "Git", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
+      { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
+      { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
+      { name: "Jupyter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" },
+      { name: "MySQL", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+      { name: "MongoDB", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
+    ],
+  },
 ];
 
 const Skills = () => {
@@ -22,7 +53,7 @@ const Skills = () => {
         <div className="absolute bottom-0 right-0 w-[300px] h-[300px] bg-secondary/10 blur-[80px] rounded-full" />
       </div>
 
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -37,26 +68,39 @@ const Skills = () => {
           </p>
         </motion.div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {skills.map((skill, i) => (
+        <div className="space-y-12">
+          {skillCategories.map((category, categoryIndex) => (
             <motion.div
-              key={skill.name}
+              key={category.category}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className="bg-card rounded-2xl p-6 border border-border shadow-sm group hover:shadow-lg hover:scale-[1.03] transition-all duration-300 cursor-default"
+              transition={{ duration: 0.6, delay: categoryIndex * 0.1 }}
             >
-              <div className="flex justify-between items-center mb-3">
-                <h3 className="font-heading font-semibold">{skill.name}</h3>
-                <span className="text-sm text-primary font-semibold">{skill.level}%</span>
-              </div>
-              <div className="w-full h-2.5 rounded-full bg-muted overflow-hidden">
-                <motion.div
-                  className={`h-full rounded-full bg-gradient-to-r ${skill.color}`}
-                  initial={{ width: 0 }}
-                  animate={isInView ? { width: `${skill.level}%` } : {}}
-                  transition={{ duration: 1, delay: 0.3 + i * 0.08, ease: "easeOut" }}
-                />
+              <h3 className="text-xl font-semibold font-heading mb-6 text-center sm:text-left">
+                {category.category}
+              </h3>
+              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.div
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.4, delay: categoryIndex * 0.1 + skillIndex * 0.05 }}
+                    className="bg-card rounded-xl p-6 border border-border shadow-sm hover:shadow-lg hover:scale-105 transition-all duration-300 flex flex-col items-center justify-center gap-3 group cursor-default"
+                  >
+                    <div className="w-12 h-12 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <img 
+                        src={skill.icon} 
+                        alt={skill.name}
+                        className="w-full h-full object-contain"
+                        onError={(e) => {
+                          e.currentTarget.src = "https://via.placeholder.com/48?text=" + skill.name.charAt(0);
+                        }}
+                      />
+                    </div>
+                    <span className="text-sm font-medium text-center">{skill.name}</span>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           ))}

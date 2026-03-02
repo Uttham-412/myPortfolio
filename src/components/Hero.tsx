@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ArrowDown, FileDown } from "lucide-react";
-import profileImg from "@/assets/profile.png";
+import profileImg from "@/assets/profile.jpeg";
 
 const Hero = () => {
   return (
@@ -30,7 +30,7 @@ const Hero = () => {
         >
           <div className="relative">
             <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-full overflow-hidden gradient-border glow">
-              <img src={profileImg} alt="John Doe" className="w-full h-full object-cover" />
+              <img src={profileImg} alt="Uttham" className="w-full h-full object-cover" />
             </div>
             <div className="absolute inset-0 rounded-full gradient-bg-multi opacity-20 blur-2xl -z-10 scale-150" />
           </div>
@@ -53,7 +53,7 @@ const Hero = () => {
           className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold font-heading leading-tight mb-6"
         >
           Hi, I'm{" "}
-          <span className="gradient-text">John Doe</span>
+          <span className="gradient-text">Uttham</span>
         </motion.h1>
 
         <motion.p
@@ -62,7 +62,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
           className="text-lg sm:text-xl text-muted-foreground mb-3 font-medium"
         >
-          Engineering Student | AI & ML Enthusiast
+          AI & ML Engineering Student | Aspiring AI Engineer
         </motion.p>
 
         <motion.p
@@ -71,8 +71,7 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.45, ease: "easeOut" }}
           className="text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed"
         >
-          Passionate about building intelligent systems that solve real-world problems.
-          Exploring the frontiers of Deep Learning, Data Science, and AI-driven innovation.
+          I am passionate about building intelligent systems that solve real-world problems. I enjoy developing full-stack applications, secure authentication systems, and AI-driven solutions. I continuously explore modern technologies and aim to become a skilled AI Engineer creating impactful and scalable innovations.
         </motion.p>
 
         <motion.div

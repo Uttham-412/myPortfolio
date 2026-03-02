@@ -4,27 +4,27 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "Predictive Maintenance System",
+    title: "Real-Time Collaborative Whiteboard App",
     description:
-      "Deep Learning model for industrial equipment failure prediction. Uses LSTM networks to analyze sensor data and predict potential failures before they occur, reducing downtime by 35%.",
-    tech: ["Python", "TensorFlow", "LSTM", "Pandas", "Docker"],
-    github: "#",
+      "A real-time collaborative whiteboard web application that allows multiple users to draw and interact on a shared canvas simultaneously. Built using FastAPI, WebSockets, HTML5 Canvas, and MongoDB for persistent storage.",
+    tech: ["Python", "FastAPI", "WebSockets", "JavaScript", "MongoDB"],
+    github: "https://github.com/Uttham-412/Whiteboard",
     accent: "from-primary to-secondary",
   },
   {
-    title: "Workspace Demand Forecasting",
+    title: "EduCareer Platform",
     description:
-      "Time-series forecasting system for predicting workspace demand patterns. Built with Prophet and custom ARIMA models to optimize resource allocation across multiple locations.",
-    tech: ["Python", "Prophet", "ARIMA", "Streamlit", "PostgreSQL"],
-    github: "#",
+      "A full-stack educational platform that helps users explore career guidance and learning resources. Designed with a modern UI and backend API integration for dynamic content management.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
+    github: "https://github.com/Uttham-412/educareer",
     accent: "from-secondary to-accent",
   },
   {
-    title: "Sentiment Analysis Engine",
+    title: "ZeroTrustAuth – Secure Authentication System",
     description:
-      "NLP pipeline for real-time sentiment analysis on social media data. Fine-tuned BERT model achieving 92% accuracy on domain-specific text classification tasks.",
-    tech: ["PyTorch", "BERT", "FastAPI", "Redis", "AWS"],
-    github: "#",
+      "A secure authentication system based on Zero Trust principles. Implements JWT-based authentication and role-based access control to protect API endpoints and user data.",
+    tech: ["Node.js", "Express.js", "MongoDB", "JWT"],
+    github: "https://github.com/Uttham-412/ZeroTrustAuth",
     accent: "from-accent to-primary",
   },
 ];

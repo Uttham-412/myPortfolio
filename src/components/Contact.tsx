@@ -41,9 +41,9 @@ const Contact = () => {
             <h3 className="text-xl font-heading font-semibold">Connect with me</h3>
             <div className="space-y-4">
               {[
-                { icon: Mail, label: "johndoe@email.com", href: "mailto:johndoe@email.com", color: "from-primary to-secondary" },
-                { icon: Linkedin, label: "linkedin.com/in/johndoe", href: "#", color: "from-secondary to-accent" },
-                { icon: Github, label: "github.com/johndoe", href: "#", color: "from-accent to-primary" },
+                { icon: Mail, label: "uttham188@gmail.com", href: "mailto:uttham188@gmail.com", color: "from-primary to-secondary" },
+                { icon: Linkedin, label: "linkedin.com/in/uttham-poojary", href: "https://www.linkedin.com/in/uttham-poojary-809986302", color: "from-secondary to-accent" },
+                { icon: Github, label: "github.com/Uttham-412", href: "https://github.com/Uttham-412", color: "from-accent to-primary" },
               ].map((item) => (
                 <a
                   key={item.label}
